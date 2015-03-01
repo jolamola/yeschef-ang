@@ -1,0 +1,34 @@
+$green: #8DE86B;
+$blue: #4A90E2;
+$dkGrey: #4A4A4A;
+$oj: #F5A623;
+$white: #FFFFFF;
+
+.oj {
+	color: $oj;
+}
+
+body {
+	background: $dkGrey;
+}
+
+.btn-signin {
+	background: $dkGrey;
+	border-radius: 2px;
+	color: $blue;
+	font-size: 30px;
+	padding: 10px 15px;
+	border: 1px solid $blue;
+	outline: none;
+	text-decoration: none;
+	&:hover {
+		background-color: $blue;
+		color: $dkGrey;
+		outline: none;
+		transition: background-color 0.3s ease-out, 
+					border-color 0.3s ease-in;
+		cursor: pointer;
+		text-decoration: none
+	}
+}
+
