@@ -59,18 +59,36 @@ angular
 
 .controller("editRecipeCtrl", function($scope, $http, $resource, $stateParams, $state) {
 	var Recipe = $resource('api/recipes/:id', {id:'@id'}, 
-	  { 
+	{ 
 		'update': { method: 'patch' }
-	  });
-	$scope.recipe = Recipe.get({id:$stateParams.id}, function(recipe){
+	});
+	$scope.recipe = Recipe.get({id: $stateParams.id}, function(recipe){
 		recipe.$update();
 	});
 	$scope.editRecipe = function(recipe) {
-		recipe.$update(function(){
-			$state.go('showrecipe',{id:$stateParams.id})
-		});
+		recipe.$update()
+		$state.go('showrecipe',{id:$stateParams.id})
 	}
-});
+})
+
+.controller("deleteRecipe", function($scope, $http, $resource, $stateParams, $state){
+	// var Recipe = $resource('api/recipes/:id', {id:'@id'});
+	$scope.deleteRecipe = function(recipe, index) {
+		$scope.recipe = Recipe.get({id: recipe.id}, function(recipe){
+			recipe.$delete();
+			$state.go('allrecipes',{id: $stateParams.id})
+		});
+		
+	}
+})
+
+
+  // $scope.destroyPost = function(post, index) {
+  //   $scope.post = Post.get({id: post.id}, function(post) {
+  //     post.$delete();
+  //     $scope.posts.splice(index, 1);
+  //   });
+  // }
 
 		// var self = this;
 		// self.num = 4;

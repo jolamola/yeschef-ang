@@ -33,7 +33,15 @@ module Api
       end
     end
 
-
+    def destroy
+      recipe = Recipe.find(params[:id])
+      if recipe.destroy
+        render status: 200
+      else
+        render status: 422
+      end
+    end
+      
 
 
 

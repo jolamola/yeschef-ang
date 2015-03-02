@@ -6,4 +6,5 @@
 {{ recipe.direction }} <br>
 
 
-<a ui-sref="editrecipe({id: recipe.id})">edit</a>
+<a class="btn btn-default" ui-sref="editrecipe({id: recipe.id})">edit</a>
+<button class="btn btn-default" ng-click="deleteRecipe(recipe)">Delete</button>

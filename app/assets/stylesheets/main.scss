@@ -4,14 +4,29 @@ $dkGrey: #4A4A4A;
 $oj: #F5A623;
 $white: #FFFFFF;
 
+// color class for ! in landing page logo
 .oj {
 	color: $oj;
 }
 
+// default settings
 body {
 	background: $dkGrey;
+	color: black;
 }
 
+
+
+/********** Landing Page **********/
+.logo {
+	color: $green;
+	font-size: 100px;
+	font-weight: bold;
+}
+.logoposition {
+	text-align: center;
+	margin-top: 200px;
+}
 .btn-signin {
 	background: $dkGrey;
 	border-radius: 2px;
@@ -31,4 +46,3 @@ body {
 		text-decoration: none
 	}
 }
-
