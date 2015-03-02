@@ -31,9 +31,10 @@ gem "font-awesome-rails"
 gem 'omniauth-facebook'
 gem 'figaro'
 
+gem 'angularjs-file-upload-rails', '~> 1.1.6'
+
 ##### CarrierWave Gems #####
 gem 'carrierwave'
-gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 
 gem 'fog'         # required for Amazon S3
 gem 'mini_magick' # for post-upload image processing
