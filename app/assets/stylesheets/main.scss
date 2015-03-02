@@ -1,8 +1,13 @@
+@import url("//fonts.googleapis.com/css?family=Ubuntu|Chelsea+Market");
+
 $green: #8DE86B;
 $blue: #4A90E2;
 $dkGrey: #4A4A4A;
 $oj: #F5A623;
 $white: #FFFFFF;
+
+$font-main: 'Ubuntu', sans-serif;
+$font-logo: 'Chelsea Market', cursive;
 
 // color class for ! in landing page logo
 .oj {
@@ -11,8 +16,9 @@ $white: #FFFFFF;
 
 // default settings
 body {
-	background: $dkGrey;
+	background: $white;
 	color: black;
+	font-family: $font-main;
 }
 
 
@@ -21,14 +27,15 @@ body {
 .logo {
 	color: $green;
 	font-size: 100px;
-	font-weight: bold;
+	// font-weight: bold;
+	font-family: $font-logo;
 }
 .logoposition {
 	text-align: center;
 	margin-top: 200px;
 }
 .btn-signin {
-	background: $dkGrey;
+	background: transparent;
 	border-radius: 2px;
 	color: $blue;
 	font-size: 30px;
@@ -38,11 +45,63 @@ body {
 	text-decoration: none;
 	&:hover {
 		background-color: $blue;
-		color: $dkGrey;
+		color: $white;
 		outline: none;
 		transition: background-color 0.3s ease-out, 
-					border-color 0.3s ease-in;
+		border-color 0.3s ease-in;
 		cursor: pointer;
 		text-decoration: none
 	}
 }
+
+/********** Recipe index **********/
+.title {
+	font-size: 36px;
+}
+.hover-text {
+	opacity: 0;
+}
+.recipe-container {
+	width: 100%;
+	margin: auto;
+}
+.recipe-card {
+	background-color: white;
+	height: 380px;
+	font-size: 14px;
+	box-shadow: 0 3px 9px rgba(0,0,0,.5);
+	margin-bottom: 10px;
+	position: relative;
+	&:hover {
+		background-color: rgba(0,0,0,.1);
+		cursor: pointer;
+		&:hover .hover-text {
+			opacity: 1;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

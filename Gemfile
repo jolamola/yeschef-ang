@@ -29,8 +29,14 @@ gem 'angular-rails-templates'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem "font-awesome-rails"
 gem 'omniauth-facebook'
-
 gem 'figaro'
+
+##### CarrierWave Gems #####
+gem 'carrierwave'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+
+gem 'fog'         # required for Amazon S3
+gem 'mini_magick' # for post-upload image processing
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

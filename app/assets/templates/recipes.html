@@ -1,23 +1,19 @@
 
 <!-- {{vm.num}} -->
-
-<div ng-controller="recipesController">
-	<h1> Recipes </h1>
-	<div ng-repeat="recipe in recipes">
-	
-<!-- 	<div ng-model="recipe.name">Recipe Name: {{recipe.name}}</div><br>
-	<div ng-model="recipe.name">Serving Size: {{recipe.size}}</div><br>
-	<div ng-model="recipe.name">Ingredient: {{recipe.ingredient}}</div><br>
-	<div ng-model="recipe.name">Direction: {{recipe.direction}}</div><br> -->
-	<!-- <button class="btn-signin" ng-click="destroyRecipe(recipe, $index)">delete</button>
-	<hr> -->
-
-	Recipe Name: {{ recipe.name }} <br>
-	Serving Size: {{ recipe.size }} <br>
-	Ingredient: {{ recipe.ingredient }} <br>
-	Direction: {{ recipe.direction }} <br>
-	<a ui-sref="showrecipe({id: recipe.id})">details</a>
-	<hr>
-
-
-</div>
+<div class="recipe-container">
+	<div ng-controller="recipesController">
+		<div class="container">
+			<div class="row title">Recipes</div>
+			<div ng-repeat="recipe in recipes">
+				<div class="col-md-3">
+					<div class="recipe-card" ui-sref="showrecipe({id: recipe.id})">
+						<div class="hover-text">
+							{{recipe.name}}
+						</div>			
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
