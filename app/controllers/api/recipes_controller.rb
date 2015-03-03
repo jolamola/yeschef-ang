@@ -15,7 +15,7 @@ module Api
 
     def create
       recipe = Recipe.new(params.require(:recipe).permit!)
-
+     
       if recipe.save
         render json: recipe
         # (only: [:name, :expiration, :id, :created_at, :recipe_type])
@@ -35,10 +35,12 @@ module Api
 
     def destroy
       recipe = Recipe.find(params[:id])
+      puts recipe
+
       if recipe.destroy
-        render status: 200
+        head 200
       else
-        render status: 422
+        head 400
       end
     end
       

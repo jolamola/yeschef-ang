@@ -1,5 +1,5 @@
 angular
-.module("yeschefApp", ["ngResource", "ui.router", "templates"])
+.module("yeschefApp", ["ngResource", "ui.router", "templates", "angularFileUpload"])
 
 .config(function($httpProvider,	$stateProvider) {
 	$httpProvider.defaults.headers.common['X-CSRF-Token'] =
@@ -34,49 +34,65 @@ angular
 
 })
 
-.controller("newRecipeCtrl", function($scope, $http, $resource){
+.controller("newRecipeCtrl", function($scope, $http, $state, $resource, FileUploader){
 	var Recipe = $resource('api/recipes/:id', {id:'@id'})
 	$scope.createRecipe = function(recipe) {
-		new Recipe(recipe).$save();
+		// $scope.uploader = new FileUploader()
+		// $scope.uploader.addToQueue()
+		recipe = new Recipe(recipe).$save();
+
 		recipe.name="";
 		recipe.size="";
 		recipe.ingredient="";
 		recipe.direction="";
-	}
+		$state.go('allrecipes')
+
+	};
 })
 
-.controller("recipesController", function($scope, $http, $resource) {
+.controller("recipesController", function($scope, $http, $resource, FileUploader) {
 	var Recipe = $resource('api/recipes/:id', {id:'@id'});
 	Recipe.query(function(data){
 		$scope.recipes = data
 	});
 })
 
-.controller("showRecipeController", function($scope, $http, $resource, $stateParams) {
+.controller("showRecipeController", function($scope, $http, $resource, $stateParams, $state, FileUploader) {
 	var Recipe = $resource('api/recipes/:id', {id:'@id'});
 	$scope.recipe = Recipe.get({id: $stateParams.id})
+
+	$scope.deleteRecipe = function(recipe) {
+		$scope.recipe = Recipe.get({id: recipe.id}, function(recipe){
+			recipe.$delete();
+			$state.go('allrecipes')
+		});
+	}
+
 })
 
-.controller("editRecipeCtrl", function($scope, $http, $resource, $stateParams, $state) {
+.controller("editRecipeCtrl", function($scope, $http, $resource, $stateParams, $state, FileUploader) {
 	var Recipe = $resource('api/recipes/:id', {id:'@id'}, 
 	{ 
 		'update': { method: 'patch' }
 	});
+
 	$scope.recipe = Recipe.get({id: $stateParams.id}, function(recipe){
 		recipe.$update();
 	});
+
 	$scope.editRecipe = function(recipe) {
-		recipe.$update()
+		recipe.$update();
 		$state.go('showrecipe',{id:$stateParams.id})
-	}
+	};
 })
 
-.controller("deleteRecipe", function($scope, $http, $resource, $stateParams, $state){
-	// var Recipe = $resource('api/recipes/:id', {id:'@id'});
+.controller("deleteRecipe", function($scope, $http, $resource, $stateParams, $state, FileUploader){
 	$scope.deleteRecipe = function(recipe, index) {
+
+		console.log(recipe)
 		$scope.recipe = Recipe.get({id: recipe.id}, function(recipe){
 			recipe.$delete();
-			$state.go('allrecipes',{id: $stateParams.id})
+			$state.go('allrecipes')
 		});
 		
 	}
