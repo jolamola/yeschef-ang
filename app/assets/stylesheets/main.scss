@@ -32,7 +32,37 @@ body {
 	margin-top: 10px;
 }
 
+.foodimage1 {
+	background-image: url("food1.jpg")
+}
 /******** nganimate for recipe index ************/
+.repeater.ng-enter {
+	-webkit-transition: 0.2s linear all;
+	transition: 0.2s linear all;
+
+	opacity: 0;
+	-webkit-transform:scale(1.15);
+	transform:scale(1.15);
+}
+
+.repeater.ng-enter.ng-enter-active  {
+	opacity: 1;
+	-webkit-transform:scale(1);
+	transform:scale(1);
+}
+
+.repeater.ng-leave {
+	-webkit-transition:0.1s linear all;
+	transition:0.1s linear all;
+
+	opacity: 1;
+}
+
+.repeater.ng-leave.ng-leave-active {
+	opacity: 0;
+}
+
+
 .repeater.ng-enter-stagger,
 .repeater.ng-leave-stagger {
 	-webkit-transition-delay: 0.1s;
@@ -42,31 +72,6 @@ body {
 	transition-duration: 0;
 }
 
-.repeater.ng-enter {
-	-webkit-transition: 0.2s linear all;
-	transition: 0.2s linear all;
-
-	opacity: 0;
-	-webkit-transform:scale(1.15)!important;
-	transform:scale(1.15)!important;
-}
-
-.repeater.ng-enter.ng-enter-active {
-	opacity: 1;
-	-webkit-transform:scale(1)!important;
-	transform:scale(1)!important;
-}
-
-.reapter.ng-leave {
-	-webkit-transition:0.1s linear all;
-	transition:01s linear all;
-
-	opacity: 1;
-}
-
-.repeater.ng-leave.ng-leave-active {
-	opacity: 0;
-}
 
 /********** Landing Page **********/
 .logo {
