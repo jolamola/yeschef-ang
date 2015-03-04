@@ -5,18 +5,33 @@ $blue: #4A90E2;
 $dkGrey: #4A4A4A;
 $oj: #F5A623;
 $white: #FFFFFF;
+$ltblue: #F0F8FF;
 
 $font-main: 'Ubuntu', sans-serif;
 $font-logo: 'Chelsea Market', cursive;
+
+$shadow: 0 3px 9px rgba(0,0,0,.5);
 
 // color class for ! in landing page logo
 .oj {
 	color: $oj;
 }
 
+.blue {
+	color: $blue;
+}
+.icon-color1 {
+	color: $white;
+	&:hover {
+		color: $blue;
+	}
+}
+.icon-minus {
+	color: red;
+}
 // default settings
 body {
-	background: $white;
+	background: $dkGrey;
 	color: black;
 	font-family: $font-main;
 }
@@ -24,19 +39,84 @@ body {
 	cursor: pointer;
 }
 
+.center {
+	text-align: center
+}
 .link-margin {
 	margin-left: 15px;
 }
 
-.hr {
-	margin-top: 10px;
+.hr-override {
+	margin-top: 5px;
+	border-top: 1px solid $oj;
 }
 
 .foodimage1 {
-	background-image: url("food1.jpg")
+	background-image: url("food1.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: auto;
+	height: 300px;
+}
+.imagebg {
+	 box-shadow:0 3px 9px rgba(0,0,0,.5); 
+	 background-color: $ltblue;
+	 margin-top: 10px;
+}
+
+.newRecipeBox {
+	background-color: white;
+	padding: 20px;
+	box-shadow: 0 3px 9px rgba(0,0,0,.5);
+	margin-top: 20px;
+}
+
+.form-control {
+	margin-bottom: 10px;
+	border-radius: 2px;
+	&:focus {
+		border-color: $green;
+	}
+}
+.form-title {
+	color: $blue;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.recipeTitle {
+	color: $white;
+	text-align: center;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.recipeDesc-box {
+	background-color: $ltblue;
+	box-shadow: $shadow;
+	height: 300px;
+	width: auto;
+
+}
+.recipeDesc {
+	font-size: 20px;
+	margin-top: 20px;
+	padding: 10px;
+}
+.recipeRight-box {
+	background-color: $ltblue;
+	box-shadow: $shadow;
+	height: 620px;
+	width: auto;
+	margin-top: 10px;
+}
+.recipeRight {
+	font-size: 20px;
+	margin-top: 0px;
+	padding: 10px;
 }
 /******** nganimate for recipe index ************/
-.repeater.ng-enter {
+.repeater.ng-enter, .repeater.ng-move {
 	-webkit-transition: 0.2s linear all;
 	transition: 0.2s linear all;
 
@@ -45,7 +125,8 @@ body {
 	transform:scale(1.15);
 }
 
-.repeater.ng-enter.ng-enter-active  {
+.repeater.ng-enter.ng-enter-active,
+.repeater.ng-move.ng-move-active  {
 	opacity: 1;
 	-webkit-transform:scale(1);
 	transform:scale(1);
@@ -110,6 +191,55 @@ body {
 	}
 }
 
+.btn-width {
+	width: 328px;
+}
+.btn-form {
+	background-color: transparent;
+	color: $blue;
+	font-size: 18px;
+	border-radius: 2px;
+	border: 1px solid $blue;
+	outline: none;
+	width: 100%;
+	margin-top: 10px;
+	&:hover {
+		background-color: $blue;
+		color: $white;
+		transition: background-color 0.3s ease-out, 
+		border-color 0.3s ease-in;
+	}
+	&:focus{
+		background-color: $blue;
+		color: $white;
+		outline: none;
+		transition: background-color 0.3s ease-out, 
+		border-color 0.3s ease-in;
+	}
+}
+
+.btn-option {
+	background-color: transparent;
+	color: $blue;
+	font-size: 18px;
+	border-radius: 2px;
+	border: 1px solid $blue;
+	outline: none;
+	width: 100px;
+	&:hover {
+		background-color: $blue;
+		color: $white;
+		transition: background-color 0.3s ease-out, 
+		border-color 0.3s ease-in;
+	}
+	&:focus{
+		background-color: $blue;
+		color: $white;
+		outline: none;
+		transition: background-color 0.3s ease-out, 
+		border-color 0.3s ease-in;
+	}
+}
 /********** Recipe index **********/
 .title {
 	font-size: 36px;
@@ -127,12 +257,20 @@ body {
 	font-size: 14px;
 	box-shadow: 0 3px 9px rgba(0,0,0,.5);
 	margin-bottom: 10px;
-	position: relative;
+	// position: relative;
 	&:hover {
 		background-color: rgba(0,0,0,.1);
 		cursor: pointer;
 		&:hover .hover-text {
 			opacity: 1;
+			font-size: 40px;
+			background-color: rgba(0,0,0,.3);
+			height: 300px;
+			width: 100%;
+			color: white;
+			margin: auto;
+			text-align: center;
+			padding-top: 120px;
 		}
 	}
 }

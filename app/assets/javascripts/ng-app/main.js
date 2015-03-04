@@ -34,29 +34,34 @@ angular
 
 })
 
+.controller("recipesController", function($scope, $http, $resource, $modal, $log) {
+	var Recipe = $resource('api/recipes/:id', {id:'@id'});
+	Recipe.query(function(data){
+		$scope.recipes = data
+	});	
+
+		// Modal
+	// $scope.open = function () {
+	// 	var instance = $modal.open({
+	// 		templateUrl: 'newRecipe.html',
+	// 		controller: 'newRecipeCtrl'
+	// 	});
+
+	// };
+})
 .controller("newRecipeCtrl", function($scope, $http, $state, $resource){
 	var Recipe = $resource('api/recipes/:id', {id:'@id'})
 	$scope.createRecipe = function(recipe) {
 		// $scope.uploader = new FileUploader()
 		// $scope.uploader.addToQueue()
 		recipe = new Recipe(recipe).$save();
-
 		recipe.name="";
 		recipe.size="";
 		recipe.ingredient="";
 		recipe.direction="";
 		$state.go('allrecipes')
-
 	};
 })
-
-.controller("recipesController", function($scope, $http, $resource) {
-	var Recipe = $resource('api/recipes/:id', {id:'@id'});
-	Recipe.query(function(data){
-		$scope.recipes = data
-	});
-})
-
 .controller("showRecipeController", function($scope, $http, $resource, $stateParams, $state) {
 	var Recipe = $resource('api/recipes/:id', {id:'@id'});
 	$scope.recipe = Recipe.get({id: $stateParams.id})
@@ -94,11 +99,9 @@ angular
 			recipe.$delete();
 			$state.go('allrecipes')
 		});
-		
+
 	}
-})
-
-
+});
 
 
   // $scope.destroyPost = function(post, index) {

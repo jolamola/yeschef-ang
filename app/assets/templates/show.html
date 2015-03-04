@@ -1,10 +1,40 @@
-<h1> show recipe </h1>
+<div class="container">
+	<header class="recipeTitle"=>
+		<h1> {{ recipe.name }} </h1>
+	</header>
 
-{{ recipe.name }} <br>
-{{ recipe.size }} <br>
-{{ recipe.ingredient }} <br>
-{{ recipe.direction }}<br>
-<img ng-src="{{ recipe.image }}"><br>
 
-<a class="btn btn-default" ui-sref="editrecipe({id: recipe.id})">edit</a>
-<button class="btn btn-default" ng-click="deleteRecipe(recipe)">Delete</button>
+	<div class="col-md-4">
+		<div class="foodimage1 imagebg"></div>
+		<div class="recipeDesc-box">
+			<div class="recipeDesc">
+				Recipe Name: {{ recipe.name }}
+				<br>
+				Serving Size: {{ recipe.size }}
+				<br><br>
+				<div class="center">
+					<a class="btn btn-option" ui-sref="editrecipe({id: recipe.id})">edit</a>
+					<button class="btn btn-option" ng-click="deleteRecipe(recipe)">delete</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-8">
+		<div class="recipeRight-box">
+			<div class="recipeRight">
+				Ingredients:<br>
+				{{ recipe.ingredient }} <br>
+				<hr>
+				Directions: <br>
+				{{ recipe.direction }}
+			</div>
+		</div>
+
+	</div>
+	<br>
+
+	<img ng-src="{{ recipe.image }}"><br>
+
+
+</div>
