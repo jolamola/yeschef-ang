@@ -30,6 +30,7 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem "font-awesome-rails"
 gem 'omniauth-facebook'
 gem 'figaro'
+gem 'bourbon'
 
 gem 'angularjs-file-upload-rails', '~> 1.1.6'
 
