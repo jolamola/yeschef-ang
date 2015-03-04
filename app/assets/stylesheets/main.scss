@@ -20,8 +20,53 @@ body {
 	color: black;
 	font-family: $font-main;
 }
+.cursor {
+	cursor: pointer;
+}
 
+.link-margin {
+	margin-left: 15px;
+}
 
+.hr {
+	margin-top: 10px;
+}
+
+/******** nganimate for recipe index ************/
+.repeater.ng-enter-stagger,
+.repeater.ng-leave-stagger {
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+
+	-webkit-transition-duration: 0;
+	transition-duration: 0;
+}
+
+.repeater.ng-enter {
+	-webkit-transition: 0.2s linear all;
+	transition: 0.2s linear all;
+
+	opacity: 0;
+	-webkit-transform:scale(1.15)!important;
+	transform:scale(1.15)!important;
+}
+
+.repeater.ng-enter.ng-enter-active {
+	opacity: 1;
+	-webkit-transform:scale(1)!important;
+	transform:scale(1)!important;
+}
+
+.reapter.ng-leave {
+	-webkit-transition:0.1s linear all;
+	transition:01s linear all;
+
+	opacity: 1;
+}
+
+.repeater.ng-leave.ng-leave-active {
+	opacity: 0;
+}
 
 /********** Landing Page **********/
 .logo {
@@ -33,6 +78,12 @@ body {
 .logoposition {
 	text-align: center;
 	margin-top: 200px;
+}
+.logo-sm {
+	color: $green;
+	font-size: 36px;
+	font-family: $font-logo;
+	margin-left: 0px;
 }
 .btn-signin {
 	background: transparent;
@@ -62,12 +113,12 @@ body {
 	opacity: 0;
 }
 .recipe-container {
-	width: 100%;
+	width: 90%;
 	margin: auto;
 }
 .recipe-card {
 	background-color: white;
-	height: 380px;
+	height: 300px;
 	font-size: 14px;
 	box-shadow: 0 3px 9px rgba(0,0,0,.5);
 	margin-bottom: 10px;

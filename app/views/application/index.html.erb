@@ -1,11 +1,27 @@
-<nav>
-	<i class="fa fa-bars fa-3x oj"></i>
-	<a ui-sref="home">home</a>
-	<a ui-sref="allrecipes">ALL</a>
-	<a ui-sref="new">add new</a>
-</nav>
-
-<%= @test %>
-<%= params %>
+<div class="container-fluid">
+	<nav class="">
+		<!-- <i class="fa fa-bars fa-3x oj" ng-click="isCollapsed = !isCollapsed"></i> -->
+		<span class="green logo-sm">yes<span class="oj">!</span class="green">chef</span>
+		<span class="">
+			<a ui-sref="home" class="link-margin">home</a>
+			<a ui-sref="allrecipes" class="link-margin">ALL</a>
+			<a ui-sref="new" class="link-margin">add new</a>
+		</span>
+		<hr>
+	</nav>
+</div>
+<!-- <div class="container-fluid">
+	<div ng-controller="CollapseDemoCtrl">
+		<i class="fa fa-bars fa-3x oj cursor" ng-click="isCollapsed = !isCollapsed"></i>
+		<hr>
+		<div collapse="isCollapsed">
+			<div class="well">
+				<a ui-sref="home">home</a>
+				<a ui-sref="allrecipes">ALL</a>
+				<a ui-sref="new">add new</a>
+			</div> 
+		</div>
+	</div>
+</div> -->
 
 <ui-view></ui-view>

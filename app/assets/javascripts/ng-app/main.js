@@ -1,5 +1,5 @@
 angular
-.module("yeschefApp", ["ngResource", "ui.router", "templates", "angularFileUpload"])
+.module("yeschefApp", ["ngResource", "ui.router", "templates",'ui.bootstrap','ngAnimate'])
 
 .config(function($httpProvider,	$stateProvider) {
 	$httpProvider.defaults.headers.common['X-CSRF-Token'] =
@@ -34,7 +34,7 @@ angular
 
 })
 
-.controller("newRecipeCtrl", function($scope, $http, $state, $resource, FileUploader){
+.controller("newRecipeCtrl", function($scope, $http, $state, $resource){
 	var Recipe = $resource('api/recipes/:id', {id:'@id'})
 	$scope.createRecipe = function(recipe) {
 		// $scope.uploader = new FileUploader()
@@ -50,14 +50,14 @@ angular
 	};
 })
 
-.controller("recipesController", function($scope, $http, $resource, FileUploader) {
+.controller("recipesController", function($scope, $http, $resource) {
 	var Recipe = $resource('api/recipes/:id', {id:'@id'});
 	Recipe.query(function(data){
 		$scope.recipes = data
 	});
 })
 
-.controller("showRecipeController", function($scope, $http, $resource, $stateParams, $state, FileUploader) {
+.controller("showRecipeController", function($scope, $http, $resource, $stateParams, $state) {
 	var Recipe = $resource('api/recipes/:id', {id:'@id'});
 	$scope.recipe = Recipe.get({id: $stateParams.id})
 
@@ -70,7 +70,7 @@ angular
 
 })
 
-.controller("editRecipeCtrl", function($scope, $http, $resource, $stateParams, $state, FileUploader) {
+.controller("editRecipeCtrl", function($scope, $http, $resource, $stateParams, $state) {
 	var Recipe = $resource('api/recipes/:id', {id:'@id'}, 
 	{ 
 		'update': { method: 'patch' }
@@ -86,7 +86,7 @@ angular
 	};
 })
 
-.controller("deleteRecipe", function($scope, $http, $resource, $stateParams, $state, FileUploader){
+.controller("deleteRecipe", function($scope, $http, $resource, $stateParams, $state){
 	$scope.deleteRecipe = function(recipe, index) {
 
 		console.log(recipe)
@@ -97,6 +97,8 @@ angular
 		
 	}
 })
+
+
 
 
   // $scope.destroyPost = function(post, index) {
