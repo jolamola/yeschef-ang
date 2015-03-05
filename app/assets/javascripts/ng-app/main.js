@@ -34,7 +34,7 @@ angular
 
 })
 
-.controller("recipesController", function($scope, $http, $resource, $modal, $log) {
+.controller("recipesController", ["$scope", "$http", "$resource", "$modal", "$log", function($scope, $http, $resource, $modal, $log) {
 	var Recipe = $resource('api/recipes/:id', {id:'@id'});
 	Recipe.query(function(data){
 		$scope.recipes = data
@@ -48,8 +48,8 @@ angular
 	// 	});
 
 	// };
-})
-.controller("newRecipeCtrl", function($scope, $http, $state, $resource){
+}])
+.controller("newRecipeCtrl", ["$scope", "$http", "$state", "$resource", function($scope, $http, $state, $resource){
 	var Recipe = $resource('api/recipes/:id', {id:'@id'})
 	$scope.createRecipe = function(recipe) {
 		// $scope.uploader = new FileUploader()
@@ -61,8 +61,8 @@ angular
 		recipe.direction="";
 		$state.go('allrecipes')
 	};
-})
-.controller("showRecipeController", function($scope, $http, $resource, $stateParams, $state) {
+}])
+.controller("showRecipeController", ["$scope", "$http", "$resource", "$stateParams", "$state", function($scope, $http, $resource, $stateParams, $state) {
 	var Recipe = $resource('api/recipes/:id', {id:'@id'});
 	$scope.recipe = Recipe.get({id: $stateParams.id})
 
@@ -73,9 +73,9 @@ angular
 		});
 	}
 
-})
+}])
 
-.controller("editRecipeCtrl", function($scope, $http, $resource, $stateParams, $state) {
+.controller("editRecipeCtrl", ["$scope", "$http", "$resource", "$stateParams", "$state", function($scope, $http, $resource, $stateParams, $state) {
 	var Recipe = $resource('api/recipes/:id', {id:'@id'}, 
 	{ 
 		'update': { method: 'patch' }
@@ -89,9 +89,9 @@ angular
 		recipe.$update();
 		$state.go('showrecipe',{id:$stateParams.id})
 	};
-})
+}])
 
-.controller("deleteRecipe", function($scope, $http, $resource, $stateParams, $state){
+.controller("deleteRecipe", ["$scope", "$http", "$resource", "$stateParams", "$state", function($scope, $http, $resource, $stateParams, $state){
 	$scope.deleteRecipe = function(recipe, index) {
 
 		console.log(recipe)
@@ -101,7 +101,7 @@ angular
 		});
 
 	}
-});
+}]);
 
 
   // $scope.destroyPost = function(post, index) {

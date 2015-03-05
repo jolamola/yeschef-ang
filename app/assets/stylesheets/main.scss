@@ -58,18 +58,7 @@ body {
 	border-top: 1px solid $blue;
 }
 
-.foodimage1 {
-	background-image: url("food1.jpg");
-	background-repeat: no-repeat;
-	background-position: center;
-	width: auto;
-	height: 300px;
-}
-.imagebg {
-	 box-shadow:0 3px 9px rgba(0,0,0,.5); 
-	 background-color: $ltblue;
-	 margin-top: 10px;
-}
+
 
 .newRecipeBox {
 	background-color: white;
@@ -123,45 +112,45 @@ body {
 	padding: 10px;
 }
 /******** nganimate for recipe index ************/
-.repeater.ng-enter, .repeater.ng-move {
-	-webkit-transition: 0.2s linear all;
-	-moz-transition: 0.2s linear all;
-	-o-transition: 0.2s linear all;
-	transition: 0.2s linear all;
+// .repeater.ng-enter, .repeater.ng-move {
+// 	-webkit-transition: 0.2s linear all;
+// 	-moz-transition: 0.2s linear all;
+// 	-o-transition: 0.2s linear all;
+// 	transition: 0.2s linear all;
 
-	opacity: 0;
-	-webkit-transform:scale(1.15);
-	-moz-transform:scale(1.15);
-	-o-transform:scale(1.15);
-	transform:scale(1.15);
-}
+// 	opacity: 0;
+// 	-webkit-transform:scale(1.15);
+// 	-moz-transform:scale(1.15);
+// 	-o-transform:scale(1.15);
+// 	transform:scale(1.15);
+// }
 
-.repeater.ng-enter.ng-enter-active,
-.repeater.ng-move.ng-move-active  {
-	opacity: 1;
-	-webkit-transform:scale(1);
-	-moz-transform:scale(1);
-	-o-transform:scale(1);
-	transform:scale(1);
-}
+// .repeater.ng-enter.ng-enter-active,
+// .repeater.ng-move.ng-move-active  {
+// 	opacity: 1;
+// 	-webkit-transform:scale(1);
+// 	-moz-transform:scale(1);
+// 	-o-transform:scale(1);
+// 	transform:scale(1);
+// }
 
-.repeater.ng-leave {
-	-webkit-transition:0.1s linear all;
-	-moz-webkit-transition:0.1s linear all;
-	-o-webkit-transition:0.1s linear all;
-	transition:0.1s linear all;
+// .repeater.ng-leave {
+// 	-webkit-transition:0.1s linear all;
+// 	-moz-webkit-transition:0.1s linear all;
+// 	-o-webkit-transition:0.1s linear all;
+// 	transition:0.1s linear all;
 
-	opacity: 1;
-}
+// 	opacity: 1;
+// }
 
-.repeater.ng-leave.ng-leave-active {
-	opacity: 0;
-}
+// .repeater.ng-leave.ng-leave-active {
+// 	opacity: 0;
+// }
 
 // .repeater.ng-enter-stagger,
 // .repeater.ng-leave-stagger {
-// 	-webkit-transition-delay: 0.1s;
-// 	transition-delay: 0.1s;
+// 	-webkit-transition-delay: 5s;
+// 	transition-delay: 5s;
 
 // 	-webkit-transition-duration: 0s;
 // 	transition-duration: 0s;
@@ -271,9 +260,9 @@ body {
 	font-size: 14px;
 	box-shadow: 0 3px 9px rgba(0,0,0,.5);
 	margin-bottom: 10px;
-	// position: relative;
+	position: relative;
 	&:hover {
-		background-color: rgba(0,0,0,.1);
+		background-color: rgba(0,0,0,.4);
 		cursor: pointer;
 		&:hover .hover-text {
 			opacity: 1;
@@ -282,11 +271,26 @@ body {
 			height: 300px;
 			width: 100%;
 			color: white;
-			margin: auto;
+			margin-top: auto;
+			margin-bottom: auto;
 			text-align: center;
 			padding-top: 120px;
+			vertical-align: middle;
+			line-height: 40px;
 		}
 	}
+}
+.foodimage1 {
+	background-image: url("food1.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: auto;
+	height: 300px;
+}
+.imagebg {
+	 box-shadow:0 3px 9px rgba(0,0,0,.5); 
+	 background-color: $ltblue;
+	 margin-top: 10px;
 }
 
 
@@ -295,11 +299,25 @@ body {
 
 
 
+// fb
 
-
-
-
-
+.btn-fb {
+	background-color: #3B5998;
+	border-radius: 0px;
+	color: #ffffff;
+	font-size: 30px;
+	padding: 20px 25px;
+}
+.btn-fb:hover,
+.btn-fb:focus{
+	background-color: white;
+	color: #3B5998;
+	outline: none;
+	transition: background-color 0.3s ease-out, 
+				border-color 0.3s ease-in;
+	cursor: pointer;
+	text-decoration: none
+}
 
 
 

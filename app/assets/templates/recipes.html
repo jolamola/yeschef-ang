@@ -7,12 +7,14 @@
 			<div ng-repeat="recipe in recipes" class="">
 				<div class="col-md-3">
 
-					<div class="recipe-card foodimage1 animated zoomIn" ui-sref="showrecipe({id: recipe.id})">
+					<div class="recipe-card">
+					<div class="foodimage1 animated zoomIn" ui-sref="showrecipe({id: recipe.id})">
 						<div class="hover-text">
 							{{recipe.name}}
 						</div>			
 						
 					</div>
+				</div>
 					
 				</div>
 			</div>
