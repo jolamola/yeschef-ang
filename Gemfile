@@ -29,16 +29,16 @@ gem 'angular-rails-templates'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem "font-awesome-rails"
 gem 'omniauth-facebook'
-gem 'figaro'
+# gem 'figaro'
 gem 'bourbon'
 
 gem 'angularjs-file-upload-rails', '~> 1.1.6'
 
 ##### CarrierWave Gems #####
-gem 'carrierwave'
+# gem 'carrierwave'
 
-gem 'fog'         # required for Amazon S3
-gem 'mini_magick' # for post-upload image processing
+# gem 'fog'         # required for Amazon S3
+# gem 'mini_magick' # for post-upload image processing
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
