@@ -32,7 +32,7 @@ gem 'omniauth-facebook'
 # gem 'figaro'
 gem 'bourbon'
 
-gem 'angularjs-file-upload-rails', '~> 1.1.6'
+# gem 'angularjs-file-upload-rails', '~> 1.1.6'
 
 ##### CarrierWave Gems #####
 # gem 'carrierwave'
