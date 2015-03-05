@@ -2,12 +2,12 @@
 	<div ng-controller="recipesController">
 		<!-- <div class="container"> -->
 
-		<div class="row title">Recipes</div>
-		<div class="row">
-			<div ng-repeat="recipe in recipes" class="repeater">
+		<!-- <div class="row title">Recipes</div> -->
+		<div class="row row-margin">
+			<div ng-repeat="recipe in recipes" class="">
 				<div class="col-md-3">
 
-					<div class="recipe-card foodimage1" ui-sref="showrecipe({id: recipe.id})">
+					<div class="recipe-card foodimage1 animated zoomIn" ui-sref="showrecipe({id: recipe.id})">
 						<div class="hover-text">
 							{{recipe.name}}
 						</div>			

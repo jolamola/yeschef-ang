@@ -23,12 +23,10 @@ $shadow: 0 3px 9px rgba(0,0,0,.5);
 .icon-color1 {
 	color: $white;
 	&:hover {
-		color: $blue;
+		color: $oj;
 	}
 }
-.icon-minus {
-	color: red;
-}
+
 // default settings
 body {
 	background: $dkGrey;
@@ -42,6 +40,10 @@ body {
 .center {
 	text-align: center
 }
+
+.row-margin {
+	margin-top: 20px;
+}
 .link-margin {
 	margin-left: 15px;
 }
@@ -49,6 +51,11 @@ body {
 .hr-override {
 	margin-top: 5px;
 	border-top: 1px solid $oj;
+}
+
+.hr-override-blue {
+	margin-top: 5px;
+	border-top: 1px solid $blue;
 }
 
 .foodimage1 {
@@ -94,7 +101,7 @@ body {
 .recipeDesc-box {
 	background-color: $ltblue;
 	box-shadow: $shadow;
-	height: 300px;
+	height: 250px;
 	width: auto;
 
 }
@@ -106,7 +113,7 @@ body {
 .recipeRight-box {
 	background-color: $ltblue;
 	box-shadow: $shadow;
-	height: 620px;
+	height: 570px;
 	width: auto;
 	margin-top: 10px;
 }
@@ -118,10 +125,14 @@ body {
 /******** nganimate for recipe index ************/
 .repeater.ng-enter, .repeater.ng-move {
 	-webkit-transition: 0.2s linear all;
+	-moz-transition: 0.2s linear all;
+	-o-transition: 0.2s linear all;
 	transition: 0.2s linear all;
 
 	opacity: 0;
 	-webkit-transform:scale(1.15);
+	-moz-transform:scale(1.15);
+	-o-transform:scale(1.15);
 	transform:scale(1.15);
 }
 
@@ -129,11 +140,15 @@ body {
 .repeater.ng-move.ng-move-active  {
 	opacity: 1;
 	-webkit-transform:scale(1);
+	-moz-transform:scale(1);
+	-o-transform:scale(1);
 	transform:scale(1);
 }
 
 .repeater.ng-leave {
 	-webkit-transition:0.1s linear all;
+	-moz-webkit-transition:0.1s linear all;
+	-o-webkit-transition:0.1s linear all;
 	transition:0.1s linear all;
 
 	opacity: 1;
@@ -143,15 +158,14 @@ body {
 	opacity: 0;
 }
 
+// .repeater.ng-enter-stagger,
+// .repeater.ng-leave-stagger {
+// 	-webkit-transition-delay: 0.1s;
+// 	transition-delay: 0.1s;
 
-.repeater.ng-enter-stagger,
-.repeater.ng-leave-stagger {
-	-webkit-transition-delay: 0.1s;
-	transition-delay: 0.1s;
-
-	-webkit-transition-duration: 0;
-	transition-duration: 0;
-}
+// 	-webkit-transition-duration: 0s;
+// 	transition-duration: 0s;
+// }
 
 
 /********** Landing Page **********/
